@@ -1,6 +1,6 @@
 package com.quizapplication;
 
-public class Game {
+public class QuizGame {
 
     Question[] questions=new Question[3];
     Player player=new Player();
