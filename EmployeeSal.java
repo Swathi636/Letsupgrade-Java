@@ -1,48 +1,35 @@
- import java.util.Scanner;
+public class EmployeeSal {
 
-    class EmployeeSal
-    {
-        int Id;
-        String Name;
-        int Age;
-        long Salary;
+   String name;
+   int age;
+   String designation;
+   double salary;
 
-        void GetData()  
-        {
+   
+   public EmployeeSal(String name) {
+      this.name = name;
+   }
 
-            Scanner sc = new Scanner(System.in);
+  
+   public void empAge(int empAge) {
+      age = empAge;
+   }
 
-            System.out.print("\n\tEnter Employee Id : ");
-            Id = Integer.parseInt(sc.nextLine());
+   
+   public void empDesignation(String empDesig) {
+      designation = empDesig;
+   }
 
-            System.out.print("\n\tEnter Employee Name : ");
-            Name = sc.nextLine();
+  
+   public void empSalary(double empSalary) {
+      salary = empSalary;
+   }
 
-            System.out.print("\n\tEnter Employee Age : ");
-            Age = Integer.parseInt(sc.nextLine());
-
-            System.out.print("\n\tEnter Employee Salary : ");
-            Salary = Long.parseLong(sc.nextLine());
-
-        }
-
-        void PutData()          
-        {
-
-            System.out.print("\n\tEmployee Id : "+Id);
-            System.out.print("\n\tEmployee Name : "+Name);
-            System.out.print("\n\tEmployee Age : "+Age);
-            System.out.print("\n\tEmployee Salary : "+Salary);
-
-        }
-
-        public static void main(String args[])
-        {
-
-            EmployeeSal E = new EmployeeSal();
-
-            E.GetData();          
-            E.PutData();         
-
-        }
-    }
+   
+   public void printEmployee() {
+      System.out.println("Name:"+ name );
+      System.out.println("Age:" + age );
+      System.out.println("Designation:" + designation );
+      System.out.println("Salary:" + salary);
+   }
+}

@@ -1,37 +1,54 @@
-package com.Letsupgrade;
-public class Employee {
+import java.util.Scanner;
 
-    String name;
-    int day,month,year;
-    double mSalary,aSalary,taxAmount;
+class Employee
+    {
+        int Id;
+        String Name;
+        int Age;
+        long Salary;
 
-    public void display(){
+        void GetData()          
+        {
 
-        System.out.println("\nEmployee Name: " + name);
-        System.out.println("Employee DOB: " + day + "-" + month + "-" + year);
-        System.out.println("Age: " + (2020-year));
-        aSalary = mSalary * 12;
-        System.out.println("Annual Salary: " + aSalary);
+            Scanner sc = new Scanner(System.in);
 
-        if (aSalary>=500000) {
-            taxAmount = aSalary * 0.2;
-            System.out.println("Tax Amount: " + taxAmount); //20% tax
-        }
-        else if(aSalary>=400000 && aSalary <500000){
-            taxAmount = aSalary * 0.15;
-            System.out.println("Tax Amount: " + taxAmount); //15% tax
-        }
-        else if(aSalary>=300000 && aSalary <400000){
-            taxAmount = aSalary * 0.1;
-            System.out.println("Tax Amount: " + taxAmount); //10% tax
-        }
-        else if(aSalary>=200000 && aSalary <300000){
-            taxAmount = aSalary * 0.05;
-            System.out.println("Tax Amount: " + taxAmount); //5% tax
-        }
-        else if(aSalary<200000){
-            System.out.println("Salary is less than 2 lacs.");
+            System.out.print("\n\tEnter Employee Id : ");
+            Id = Integer.parseInt(sc.nextLine());
+
+            System.out.print("\n\tEnter Employee Name : ");
+            Name = sc.nextLine();
+
+            System.out.print("\n\tEnter Employee Age : ");
+            Age = Integer.parseInt(sc.nextLine());
+
+            System.out.print("\n\tEnter Employee Salary : ");
+            Salary = Integer.parseInt(sc.nextLine());
+
         }
 
+        void PutData()           
+        {
+            System.out.print("\n\t" + Id + "\t" +Name + "\t" +Age + "\t" +Salary);
+        }
+
+        public static void main(String args[])
+        {
+
+            Employee[] Emp = new Employee[3];
+            int i;
+
+            for(i=0;i<3;i++)
+                Emp[i] =  new Employee();  
+
+            for(i=0;i<3;i++)
+            {
+                System.out.print("\nEnter details of "+ (i+1) +" Employee\n");
+                Emp[i].GetData();
+            }
+
+            System.out.print("\nDetails of Employees\n");
+            for(i=0;i<3;i++)
+                Emp[i].PutData();
+
+        }
     }
-}
